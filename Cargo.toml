@@ -1,0 +1,7 @@
+[package]
+name = "pci-range"
+version = "0.1.0"
+authors = ["Qiu Wenbo <qiuwenbo@phytium.com.cn>"]
+edition = "2018"
+
+[dependencies]
