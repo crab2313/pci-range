@@ -1,7 +1,9 @@
 use std::env::args;
+use std::process::exit;
 
 fn print_help() {
-
+    println!("Usage:");
+    println!("      pci-range <cell0> <cell1> .. <cell7>");
 }
 
 #[derive(Debug)]
@@ -83,6 +85,11 @@ impl PCIMap {
 }
 
 fn main() {
+    if args().len() != 8 {
+        print_help();
+        exit(1);
+    }
+
     let args: Vec<Option<u32>> = args().skip(1).map(|s|
         u32::from_str_radix(s.trim_start_matches("0x"), 16).ok()
     ).chain(std::iter::repeat(None)).take(7).collect();
