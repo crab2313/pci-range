@@ -3,7 +3,7 @@ use std::process::exit;
 
 fn print_help() {
     println!("Usage:");
-    println!("      pci-range <cell0> <cell1> .. <cell7>");
+    println!("      pci-range <cell1> <cell2> .. <cell7>");
 }
 
 #[derive(Debug)]
